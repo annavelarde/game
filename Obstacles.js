@@ -1,8 +1,8 @@
 class Obstacle {
   constructor(image) {
     // super();
-    this.width = 110;
-    this.height = 110;
+    this.width = 100;
+    this.height = 100;
     this.speed = 3;
 
     // this.x = 150;

@@ -3,10 +3,10 @@ class Player {
     this.y = 800;
     this.x = 400;
     this.height = 200;
-    this.width = 135;
+    this.width = 125;
 
     this.greenAreaLeft = 155;
-    this.greenAreaRight = 145;
+    this.greenAreaRight = 150;
 
     this.rightBoundary = CANVAS_WIDTH - this.width - this.greenAreaLeft;
     this.bottomBoundary = CANVAS_HEIGHT - this.height;

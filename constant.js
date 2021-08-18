@@ -7,8 +7,9 @@ const UP_ARROW = 38;
 const LEFT_ARROW = 37;
 const RIGHT_ARROW = 39;
 
-const SPACE = 32;
 const ENTER = 13;
+// const CTRL = 17;
+// const SPACE = 32;
 
 let tealCar;
 let background;
@@ -18,6 +19,10 @@ let obstacle2;
 let point20;
 let point30;
 let point40;
+
+let score20;
+let score30;
+let score40;
 
 let song;
 

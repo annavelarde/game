@@ -14,6 +14,8 @@ function preload() {
   points40 = loadImage("./assets/40points.png");
 
   song = loadSound("./assets/carGame.mp3");
+  pointsSound = loadSound("./assets/points.wav");
+  gameOverSound = loadSound("./assets/game over.wav");
 
   game.preload();
 }

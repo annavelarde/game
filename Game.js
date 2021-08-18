@@ -52,17 +52,20 @@ class Game {
         // OBSTACLE IS NO LONGER IN CANVAS
         this.obstacles.splice(index, 1); //(removing obstacles)
         // add 1 to the score
-        this.score++ && this.gameDifficulty++;
+        this.speed++;
         // conditionally update the highscore
         if (this.highScore < this.score) {
           this.highScore = this.score;
         }
-        // update / change the inner text of the span to the current score
-        scoreHolder.innerText = this.score;
+        if (this.gameDifficulty >= 1) {
+          this.gameDifficulty++;
+        }
       }
 
       if (this.collisionCheck(this.player, obstacle)) {
         endGame();
+        gameOverSound.play();
+        song.stop();
       }
     });
 
@@ -80,9 +83,10 @@ class Game {
 
     this.points.forEach((point, index) => {
       point.draw();
-      if (point.topSide >= CANVAS_HEIGHT) {
+      if (point.topSide >= this.player.bottomSide) {
         this.points.splice(index, 1); //(removing obstacles)
-        this.score++;
+        this.score;
+        pointsSound.play();
         if (this.highScore < this.score) {
           this.highScore = this.score;
         }
@@ -90,13 +94,13 @@ class Game {
       }
     });
 
-    if (this.collisionCheck(this.player, this.points)) {
+    if (this.collisionCheck(this.player, point)) {
       this.gameDifficulty++;
       scoreHolder.innerText = this.score;
     }
 
     if (frameCount % (60 * 5) === 0) {
-      this.gameDifficulty += 8;
+      this.gameDifficulty += 3;
     }
   }
 
