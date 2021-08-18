@@ -42,9 +42,13 @@ class Obstacle {
   }
 }
 
-// class GameOverObstacle extends Obstacle {
-//   constructor(xPosition, yPosition) {
-//     super(xPosition, yPosition);
-//     this.isGameOver = true;
-//   }
-// }
+// / stops loop, draws game over message
+
+function endGame() {
+  noLoop();
+  fill("#000000");
+  textSize(60);
+  text("Game Over!", this.width / 2.7, this.height / 2.1);
+  textSize(40);
+  text("Press F5 to restart!", this.width / 2.7, this.height / 2.1 + 50);
+}

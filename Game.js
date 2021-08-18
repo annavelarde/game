@@ -6,7 +6,7 @@ class Game {
     this.points = [];
     this.score = 0;
     this.highScore = 0;
-    this.gameDifficulty = 2;
+    this.gameDifficulty = 1;
     this.pointstarts = 0;
 
     // new WHATEVER -> an instance of the WHATEVER class
@@ -52,31 +52,19 @@ class Game {
         // OBSTACLE IS NO LONGER IN CANVAS
         this.obstacles.splice(index, 1); //(removing obstacles)
         // add 1 to the score
-        this.score++;
-      }
-      if (this.highScore < this.score) {
-        this.highScore = this.score;
-      }
-      // update / change the inner text of the span to the current score
-      scoreHolder.innerText = this.score;
-
-      if (this.collisionCheck(this.player, this.obstacles)) {
-        this.gameDifficulty = 2;
+        this.score++ && this.gameDifficulty++;
+        // conditionally update the highscore
+        if (this.highScore < this.score) {
+          this.highScore = this.score;
+        }
+        // update / change the inner text of the span to the current score
         scoreHolder.innerText = this.score;
       }
+
+      if (this.collisionCheck(this.player, obstacle)) {
+        endGame();
+      }
     });
-
-    if (frameCount % (60 * 5) === 0) {
-      this.gameDifficulty += 5;
-    }
-
-    // if (this.collisionCheck(this.player, this.obstacles)) {
-    //   if (this.obstacle.isGameOver) {
-    //     noLoop();
-    //     return;
-    //   }
-    //   this.points++;
-    // }
 
     //Switch Random Points
 
@@ -103,7 +91,7 @@ class Game {
     });
 
     if (this.collisionCheck(this.player, this.points)) {
-      this.gameDifficulty = 5;
+      this.gameDifficulty++;
       scoreHolder.innerText = this.score;
     }
 
@@ -113,9 +101,6 @@ class Game {
   }
 
   keyPressed() {
-    if (keyCode === SPACE) {
-      game.restartGame();
-    }
     if (keyCode === ENTER) {
       song.play();
     }
