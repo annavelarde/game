@@ -10,11 +10,6 @@ class Background {
 
   draw() {
     this.y += 9;
-    // console.log(this.background);
-    // console.log(this.x);
-    // console.log(this.y);
-    // console.log(this.width);
-    // console.log(height);
 
     image(background, this.x, this.y, this.width, this.height);
     image(background, this.x, this.y - this.height, this.width, this.height);

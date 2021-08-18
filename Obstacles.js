@@ -1,7 +1,8 @@
 class Obstacle {
   constructor(image) {
-    this.width = 100;
-    this.height = 100;
+    // super();
+    this.width = 110;
+    this.height = 110;
     this.speed = 3;
 
     // this.x = 150;
@@ -40,3 +41,10 @@ class Obstacle {
     return this.y;
   }
 }
+
+// class GameOverObstacle extends Obstacle {
+//   constructor(xPosition, yPosition) {
+//     super(xPosition, yPosition);
+//     this.isGameOver = true;
+//   }
+// }
