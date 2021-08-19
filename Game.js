@@ -4,10 +4,11 @@ class Game {
     this.player = new Player();
     this.obstacles = [];
     this.points = [];
+
     this.score = 0;
-    this.highScore = 0;
+    // this.highScore = 0;
+
     this.gameDifficulty = 1;
-    this.pointstarts = 0;
 
     // new WHATEVER -> an instance of the WHATEVER class
     // this.SOMETHING_ELSE -> is a property of the class where it is defined. inthis case: Game
@@ -30,10 +31,11 @@ class Game {
     this.player.draw();
 
     //Switch Obstacles
-
-    if (frameCount % 250 === 0) {
+    // > frameCount -  a variable that keeps count of the number of times
+    //   that the draw function is called throughout the lifetime of a program.
+    if (frameCount % 80 === 0) {
       let switchObstacles;
-      if (this.obstacles.length % 1.5 === 0) {
+      if (this.obstacles.length % 2 === 0) {
         switchObstacles = obstacle1;
       } else {
         switchObstacles = obstacle2;
@@ -51,15 +53,7 @@ class Game {
         // if we reach here: WHAT DO WE KNOW IF WE GET HERE?
         // OBSTACLE IS NO LONGER IN CANVAS
         this.obstacles.splice(index, 1); //(removing obstacles)
-        // add 1 to the score
-        this.speed++;
-        // conditionally update the highscore
-        if (this.highScore < this.score) {
-          this.highScore = this.score;
-        }
-        if (this.gameDifficulty >= 1) {
-          this.gameDifficulty++;
-        }
+        this.gameDifficulty++;
       }
 
       if (this.collisionCheck(this.player, obstacle)) {
@@ -71,36 +65,40 @@ class Game {
 
     //Switch Random Points
 
-    if (frameCount % 300 === 0) {
+    if (frameCount % 120 === 0) {
+      //60frames for 1seconds
       let switchPoints;
-      if (this.points.length % 3 === 0) {
+      if (this.points.length % 2 === 0) {
+        //% modulus. da el restante de una solucion.  10 % 2 === 0 perf
         switchPoints = points40;
-      } else {
+        this.score += 40;
+      } else if (this.points.length % 1 === 0) {
         switchPoints = points20;
+        this.score += 20;
+      } else {
+        switchPoints = points30;
+        this.score += 30;
       }
       this.points.push(new Point(switchPoints, this.gameDifficulty));
     }
 
     this.points.forEach((point, index) => {
       point.draw();
-      if (point.topSide >= this.player.bottomSide) {
-        this.points.splice(index, 1); //(removing obstacles)
+      if (point.bottomSide >= this.player.topSide) {
         this.score;
+      }
+
+      if (this.collisionCheck(this.player, point)) {
         pointsSound.play();
-        if (this.highScore < this.score) {
-          this.highScore = this.score;
-        }
+        this.points.splice(index, 1); //(removing pointimages)
+        this.gameDifficulty++;
+        this.score;
         scoreHolder.innerText = this.score;
       }
     });
 
-    if (this.collisionCheck(this.player, point)) {
-      this.gameDifficulty++;
-      scoreHolder.innerText = this.score;
-    }
-
     if (frameCount % (60 * 5) === 0) {
-      this.gameDifficulty += 3;
+      this.gameDifficulty += 5;
     }
   }
 

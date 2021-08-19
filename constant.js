@@ -20,9 +20,7 @@ let point20;
 let point30;
 let point40;
 
-let score20;
-let score30;
-let score40;
+let score;
 
 let song;
 

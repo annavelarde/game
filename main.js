@@ -6,7 +6,7 @@ function preload() {
 
   tealCar = loadImage("./assets/teal-car.png"); //function
 
-  obstacle1 = loadImage("./assets/obstacle-banana.png");
+  obstacle1 = loadImage("./assets/obstacle-banana-.png");
   obstacle2 = loadImage("./assets/Chain_Chomp.png");
 
   points20 = loadImage("./assets/20points.png");

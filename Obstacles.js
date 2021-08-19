@@ -1,9 +1,9 @@
 class Obstacle {
   constructor(image) {
     // super();
-    this.width = 100;
-    this.height = 100;
-    this.speed = 3;
+    this.width = 110;
+    this.height = 95;
+    this.speed = 6;
 
     // this.x = 150;
     //.this.x = random(this.maxLeftSide, this.maxRightSide);
