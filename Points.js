@@ -1,9 +1,10 @@
 class Point {
-  constructor(point) {
+  constructor(point, diff, value) {
     this.width = 120;
     this.height = 80;
     this.image = point;
-    this.speed = 3;
+    this.speed = 4 + diff;
+    this.value = value;
 
     // this.x = 150;
     //.this.x = random(this.maxLeftSide, this.maxRightSide);

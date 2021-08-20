@@ -9,7 +9,7 @@ class Background {
   preload() {}
 
   draw() {
-    this.y += 9;
+    this.y += 11;
 
     image(background, this.x, this.y, this.width, this.height);
     image(background, this.x, this.y - this.height, this.width, this.height);

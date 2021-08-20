@@ -6,8 +6,9 @@ function preload() {
 
   tealCar = loadImage("./assets/teal-car.png"); //function
 
-  obstacle1 = loadImage("./assets/obstacle-banana-.png");
-  obstacle2 = loadImage("./assets/Chain_Chomp.png");
+  obstacle1 = loadImage("./assets/Chain_Chomp.png");
+  obstacle2 = loadImage("./assets/Chain_Chomp2.png");
+  obstacle3 = loadImage("./assets/Chain_Chomp3.png");
 
   points20 = loadImage("./assets/20points.png");
   points30 = loadImage("./assets/30points.png");
@@ -24,6 +25,11 @@ function setup() {
   //function declaretion
   game.setup(); //method
   song.play();
+
+  // lives = 3;
+  // score = 0;
+
+  // drawLives();
 }
 
 function draw() {

@@ -16,10 +16,6 @@ let background;
 let obstacle1;
 let obstacle2;
 
-let point20;
-let point30;
-let point40;
-
 let score;
 
 let song;

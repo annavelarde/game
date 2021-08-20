@@ -3,7 +3,25 @@
   margin: 0;
 }
 
+#teal {
+  color: rgb(54, 209, 196);
+}
+
+h2 {
+  padding: 1rem 1rem;
+  font-size: 50px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
 h1 {
-  padding: 2rem 1rem 2rem 1.5rem;
-  font-family: "Helvetica";
+  padding: 0.5rem 3rem 2rem 3rem;
+  font-size: 30px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+h3 {
+  padding: 0.5rem 3rem;
+  font-size: 30px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-weight: 100;
 }
