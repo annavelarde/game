@@ -3,6 +3,7 @@ const game = new Game(); //inicialization game
 function preload() {
   // here we will need to load our assets
   background = loadImage("./assets/background-1.jpg");
+  cover = loadImage("./assets/Cover2.jpg");
 
   tealCar = loadImage("./assets/teal-car.png"); //function
 
@@ -12,6 +13,7 @@ function preload() {
 
   points20 = loadImage("./assets/20points.png");
   points30 = loadImage("./assets/30points.png");
+
   points40 = loadImage("./assets/40points.png");
 
   song = loadSound("./assets/carGame.mp3");
@@ -22,7 +24,6 @@ function preload() {
 }
 
 function setup() {
-  //function declaretion
   game.setup(); //method
   song.play();
 

@@ -9,12 +9,14 @@ const RIGHT_ARROW = 39;
 
 const ENTER = 13;
 // const CTRL = 17;
-// const SPACE = 32;
+const SPACE = 32;
 
 let tealCar;
 let background;
 let obstacle1;
 let obstacle2;
+
+let mode;
 
 let score;
 
