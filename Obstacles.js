@@ -4,7 +4,6 @@ class Obstacle {
     this.height = 55;
 
     this.speed = 6 + difficulty;
-    // this.lives;
 
     // this.x = 150;
     //.this.x = random(this.maxLeftSide, this.maxRightSide);
@@ -55,11 +54,3 @@ function endGame() {
 }
 
 //draws score in the top left
-
-function drawScore() {
-  textAlign(LEFT);
-  noStroke();
-  fill(255);
-  textSize(50);
-  text(lives);
-}

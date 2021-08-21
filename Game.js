@@ -6,6 +6,7 @@ class Game {
     this.points = [];
     this.score = 0;
     this.gameDifficulty = 1;
+    this.live;
 
     this.x = 0;
     this.y = 0;
@@ -39,6 +40,7 @@ class Game {
     if (mode == 1) {
       this.background.draw();
       this.player.draw();
+      this.live = 3;
       //Switch Obstacles
       // > frameCount -  a variable that keeps count of the number of times
       //   that the draw function is called throughout the lifetime of a program.
@@ -142,4 +144,12 @@ class Game {
 
     return true;
   }
+}
+
+function drawScore() {
+  textAlign(LEFT);
+  noStroke();
+  fill(255);
+  textSize(50);
+  text(lives);
 }
