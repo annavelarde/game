@@ -1,6 +1,6 @@
-const CANVAS_HEIGHT = 1100;
+const CANVAS_HEIGHT = 750;
 //window.innerHeight; //global variables
-const CANVAS_WIDTH = 1100;
+const CANVAS_WIDTH = 750;
 
 const DOWN_ARROW = 40;
 const UP_ARROW = 38;

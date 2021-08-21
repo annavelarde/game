@@ -1,7 +1,7 @@
 class Point {
   constructor(point, diff, value) {
-    this.width = 120;
-    this.height = 80;
+    this.width = 80;
+    this.height = 50;
     this.image = point;
     this.speed = 4 + diff;
     this.value = value;

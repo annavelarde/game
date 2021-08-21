@@ -31,8 +31,8 @@ class Game {
     image(cover, this.x, this.y, this.width, this.height);
 
     if (mode == 0) {
-      text("Press SPACE to start!!", 300, 250);
-      textSize(50);
+      text("Press SPACE to start!!", 250, 150);
+      textSize(25);
       song.stop();
     }
 

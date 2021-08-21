@@ -1,7 +1,7 @@
 class Obstacle {
   constructor(image, difficulty) {
-    this.width = 120;
-    this.height = 90;
+    this.width = 80;
+    this.height = 55;
 
     this.speed = 6 + difficulty;
     // this.lives;
@@ -48,10 +48,10 @@ class Obstacle {
 function endGame() {
   noLoop();
   fill("#000000");
-  textSize(60);
-  text("Game Over!", this.width / 2.7, this.height / 2.1);
-  textSize(40);
-  text("Press F5 to restart!", this.width / 2.7, this.height / 2.1 + 50);
+  textSize(50);
+  text("Game Over!", this.width / 2.9, this.height / 2.1);
+  textSize(20);
+  text("Press F5 to restart.", this.width / 2.4, this.height / 2.1 + 25);
 }
 
 //draws score in the top left
